@@ -119,7 +119,7 @@ export default class API {
   express(app) {
     // generate the appropriate path for this service, based on the rootUrl
     const path = URL.parse(
-      libUrls.api(this.options.rootUrl, this.builder.serviceName, this.builder.apiVersion, '')).path;
+      libUrls.api(this.options.rootUrl, this.builder.serviceName, this.builder.apiVersion, ''))?.pathname;
     if (path === null) {
       throw new Error('Failed to parse path');
     }
